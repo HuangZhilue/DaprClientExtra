@@ -1,0 +1,12 @@
+@DaprClientExtraTests_HostAddress = http://localhost:8011
+
+GET {{DaprClientExtraTests_HostAddress}}/
+Accept: application/json
+
+###
+
+
+GET {{DaprClientExtraTests_HostAddress}}/delete
+Accept: application/json
+
+###

@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyVersion>1.0.7.0900</AssemblyVersion>
+    <FileVersion>1.0.7.0900</FileVersion>
+    <Version>$(AssemblyVersion)</Version>
+    <PackageOutputPath>C:\Users\huang\source\repos\MyNugetPackages</PackageOutputPath>
+    <Authors>huangzhilue</Authors>
+    <Title>$(AssemblyName)</Title>
+    <PackageTags>Dapr</PackageTags>
+    <Description>！注意！不建议在生产环境使用该包！
+自行编写的用来扩充DaprClient方法、Man.Dapr.Sidekick方法的类库。</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+    <IsTrimmable>False</IsTrimmable>
+    <IsAotCompatible>False</IsAotCompatible>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>embedded</DebugType>
+    <IsTrimmable>False</IsTrimmable>
+    <IsAotCompatible>False</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapr.Client" Version="1.13.1" />
+    <PackageReference Include="Man.Dapr.Sidekick" Version="2.0.0-rc01" />
+    <PackageReference Include="Man.Dapr.Sidekick.AspNetCore" Version="2.0.0-rc01" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>
