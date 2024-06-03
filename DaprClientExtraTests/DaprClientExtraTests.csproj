@@ -4,8 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyVersion>1.0.7.0923</AssemblyVersion>
-    <FileVersion>1.0.7.0923</FileVersion>
+    <AssemblyVersion>1.0.8.1011</AssemblyVersion>
+    <FileVersion>1.0.8.1011</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DaprClientExtra\DaprClientExtra.csproj" />
+	  <ProjectReference Include="..\DaprClientExtra\DaprClientExtra.csproj">
+		  <NoWarn>CS0618</NoWarn>
+	  </ProjectReference>
   </ItemGroup>
 
 </Project>

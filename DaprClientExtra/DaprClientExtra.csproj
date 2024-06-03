@@ -4,8 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>1.0.7.0900</AssemblyVersion>
-    <FileVersion>1.0.7.0900</FileVersion>
+    <AssemblyVersion>1.0.8.1011</AssemblyVersion>
+    <FileVersion>1.0.8.1011</FileVersion>
     <Version>$(AssemblyVersion)</Version>
     <PackageOutputPath>C:\Users\huang\source\repos\MyNugetPackages</PackageOutputPath>
     <Authors>huangzhilue</Authors>
