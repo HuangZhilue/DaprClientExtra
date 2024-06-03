@@ -1,25 +1,25 @@
 # DaprClientExtra
 
 > [!WARNING]  
-> ²»½¨ÒéÔÚÉú²ú»·¾³ÖĞÊ¹ÓÃ <br/> It is not recommended to use it in a production environment
+> ä¸å»ºè®®åœ¨ç”Ÿäº§ç¯å¢ƒä¸­ä½¿ç”¨ <br/> It is not recommended to use it in a production environment
 
-¸öÈËÊ¹ÓÃµÄÕë¶Ô[Dapr SDK for .NET](https://github.com/dapr/dotnet-sdk)ºÍ[Dapr Sidekick for .NET](https://github.com/man-group/dapr-sidekick-dotnet)µÄ¼òµ¥À©Õ¹
+ä¸ªäººä½¿ç”¨çš„é’ˆå¯¹[Dapr SDK for .NET](https://github.com/dapr/dotnet-sdk)å’Œ[Dapr Sidekick for .NET](https://github.com/man-group/dapr-sidekick-dotnet)çš„ç®€å•æ‰©å±•
 
-## Ê¹ÓÃÊ¾Àı / Examples
+## ä½¿ç”¨ç¤ºä¾‹ / Examples
 
-> ÍêÕûÊ¹ÓÃÊ¾Àı¿É²é¿´[DaprClientExtraTests](DaprClientExtraTests)£¨mini web api£©ÏîÄ¿µÄ[Program.cs](DaprClientExtraTests/Program.cs)
+> å®Œæ•´ä½¿ç”¨ç¤ºä¾‹å¯æŸ¥çœ‹[DaprClientExtraTests](DaprClientExtraTests)ï¼ˆmini web apiï¼‰é¡¹ç›®çš„[Program.cs](DaprClientExtraTests/Program.cs)
 > <br/>
 > For a complete usage example, see [Program.cs](DaprClientExtraTests/Program.cs) in the [DaprClientExtraTests](DaprClientExtraTests) (mini web api) project.
 
-- Ìí¼ÓDaprÏà¹ØµÄNuget°ü / Add Dapr related Nuget packages
+- æ·»åŠ Daprç›¸å…³çš„NugetåŒ… / Add Dapr related Nuget packages
     ``` XML
     <PackageReference Include="Dapr.Client" Version="1.13.1" />
     <PackageReference Include="Man.Dapr.Sidekick" Version="2.0.0-rc01" />
     <PackageReference Include="Man.Dapr.Sidekick.AspNetCore" Version="2.0.0-rc01" />
     ```
-    - Ò²±ğÍü¼ÇÁËÌí¼Ó DaprClientExtra°ü / Also don't forget to add the DaprClientExtra package
+    - ä¹Ÿåˆ«å¿˜è®°äº†æ·»åŠ  DaprClientExtraåŒ… / Also don't forget to add the DaprClientExtra package
 
-- ×¢²áDaprÏà¹ØµÄ·şÎñ / Register for Dapr related services
+- æ³¨å†ŒDaprç›¸å…³çš„æœåŠ¡ / Register for Dapr related services
     ``` C#
     
         // Add services to the container.
@@ -38,7 +38,7 @@
             async (services, cancellationToken) =>
             {
                 Console.WriteLine("Dapr Hosted Service Started...");
-                Console.WriteLine("DaprÏà¹Ø·şÎñÒÑ¾­ÍêÈ«Æô¶¯£¬ÏÖÔÚ¿ÉÒÔÔËĞĞÒ»Ğ©ĞèÒªÓÃµ½DaprµÄÈÎÎñÁË£¬±ÈÈçµ÷ÓÃDaprÃÜÔ¿À´×¢²áÊı¾İ¿âÁ´½Ó£¬µ÷ÓÃDapr×´Ì¬´æ´¢À´³õÊ¼»¯»ù´¡Êı¾İµÈ");
+                Console.WriteLine("Daprç›¸å…³æœåŠ¡å·²ç»å®Œå…¨å¯åŠ¨ï¼Œç°åœ¨å¯ä»¥è¿è¡Œä¸€äº›éœ€è¦ç”¨åˆ°Daprçš„ä»»åŠ¡äº†ï¼Œæ¯”å¦‚è°ƒç”¨Daprå¯†é’¥æ¥æ³¨å†Œæ•°æ®åº“é“¾æ¥ï¼Œè°ƒç”¨DaprçŠ¶æ€å­˜å‚¨æ¥åˆå§‹åŒ–åŸºç¡€æ•°æ®ç­‰");
                 Console.WriteLine("Dapr related services have been started. Now you can run some tasks that require Dapr, such as calling Dapr secret stores to register database connection, calling Dapr state store to initialize basic data");
 
                 DaprClient daprClient = services.GetRequiredService<DaprClient>();
@@ -46,12 +46,9 @@
             });
     ```
 
-- ¶îÍâµÄÀ©Õ¹·½·¨ / Extra extension methods
+- é¢å¤–çš„æ‰©å±•æ–¹æ³• / Extra extension methods
 
-    > [!WARNING]  
-    > ²»½¨ÒéÔÚÉú²ú»·¾³ÖĞÊ¹ÓÃ <br/> It is not recommended to use it in a production environment
-
-    1. Ê¹ÓÃ×´Ì¬´æ´¢µÄ¼òÒ×Ëø / Simple lock using state storage
+    1. ä½¿ç”¨çŠ¶æ€å­˜å‚¨çš„ç®€æ˜“é” / Simple lock using state storage
         ``` C#
         // Lock
         public static async Task<SimpleTryLockResponse> SimpleLock(
@@ -73,33 +70,33 @@
         )
         ```
 
-    2. Õë¶ÔÁĞ±íÊı¾İµÄ×´Ì¬´æ´¢ / State storage for list data
-        > ¾ßÌåµÄÁĞ±íÊı¾İ±£´æÇé¿ö£¬¿ÉÒÔ×ÔĞĞÊ¹ÓÃÏà¹Ø¹¤¾ß²é¿´£¬±ÈÈçredisµÄ¿ÉÒÔÊ¹ÓÃrdm¹¤¾ß²é¿´
+    2. é’ˆå¯¹åˆ—è¡¨æ•°æ®çš„çŠ¶æ€å­˜å‚¨ / State storage for list data
+        > å…·ä½“çš„åˆ—è¡¨æ•°æ®ä¿å­˜æƒ…å†µï¼Œå¯ä»¥è‡ªè¡Œä½¿ç”¨ç›¸å…³å·¥å…·æŸ¥çœ‹ï¼Œæ¯”å¦‚redisçš„å¯ä»¥ä½¿ç”¨rdmå·¥å…·æŸ¥çœ‹
         > <br/> For the list data storage situation, you can use the relevant tools to view it, such as redis, you can use the rdm tool to view it
         ``` C#
-        // ±£´æÁĞ±íÊı¾İ / Save list data
+        // ä¿å­˜åˆ—è¡¨æ•°æ® / Save list data
         public static async Task SaveStateListByKeyAsync<T>(this DaprClient daprClient, string statename, string key,  List<T> list, string keyField)
             
-        // »ñÈ¡Í¨¹ı SaveStateListByKeyAsync ·½·¨±£´æµÄÁĞ±íÊı¾İ / Get the list data that was saved by SaveStateListByKeyAsync
+        // è·å–é€šè¿‡ SaveStateListByKeyAsync æ–¹æ³•ä¿å­˜çš„åˆ—è¡¨æ•°æ® / Get the list data that was saved by SaveStateListByKeyAsync
         public static async Task<List<T>> GetStateListByKeyAsync<T>(this DaprClient daprClient,  string statename, string key)
 
-        // É¾³ı×´Ì¬´æ´¢ÖĞÓëlistÖĞµÄ¶ÔÏóµÄkeyFieldÊôĞÔµÄÖµÏàÍ¬µÄÊı¾İ / Delete the data in the state store that has the same value as the keyField attribute of the object in the list
+        // åˆ é™¤çŠ¶æ€å­˜å‚¨ä¸­ä¸listä¸­çš„å¯¹è±¡çš„keyFieldå±æ€§çš„å€¼ç›¸åŒçš„æ•°æ® / Delete the data in the state store that has the same value as the keyField attribute of the object in the list
         public static async Task DeleteStateListByKeyAsync<T>(this DaprClient daprClient, string statename, string key, List<T> list, string keyField)
 
-        // É¾³ıÍ¨¹ı SaveStateListByKeyAsync ·½·¨±£´æµÄÏàÍ¬KeyÖµµÄËùÓĞÁĞ±íÊı¾İ / Delete all list data with the same key value saved by the SaveStateListByKeyAsync method
+        // åˆ é™¤é€šè¿‡ SaveStateListByKeyAsync æ–¹æ³•ä¿å­˜çš„ç›¸åŒKeyå€¼çš„æ‰€æœ‰åˆ—è¡¨æ•°æ® / Delete all list data with the same key value saved by the SaveStateListByKeyAsync method
         public static async Task DeleteStateListAsync(this DaprClient daprClient, string statename, string key)
         ```
-    3. Ê¹ÓÃÌØ¶¨ÅäÖÃÎÄ¼ş£¨daprSidekick.json£©À´³õÊ¼»¯Dapr Sidekick / Initialize Dapr Sidekick using a specific configuration file (daprSidekick.json)
+    3. ä½¿ç”¨ç‰¹å®šé…ç½®æ–‡ä»¶ï¼ˆdaprSidekick.jsonï¼‰æ¥åˆå§‹åŒ–Dapr Sidekick / Initialize Dapr Sidekick using a specific configuration file (daprSidekick.json)
         ``` C#
-        // Ê¹ÓÃÅäÖÃÎÄ¼ş daprSidekick.json ºÍ daprSidekick.{ASPNETCORE_ENVIRONMENT}.json£¬½« DaprSidekick ·şÎñÌí¼Óµ½·şÎñ¼¯ºÏÖĞ¡£
+        // ä½¿ç”¨é…ç½®æ–‡ä»¶ daprSidekick.json å’Œ daprSidekick.{ASPNETCORE_ENVIRONMENT}.jsonï¼Œå°† DaprSidekick æœåŠ¡æ·»åŠ åˆ°æœåŠ¡é›†åˆä¸­ã€‚
         // Add the DaprSidekick service to the services collection using the configuration files daprSidekick.json and daprSidekick.{ASPNETCORE_ENVIRONMENT}.json.
         public static void AddDaprSidekick(this IServiceCollection services)
         ```
 
-    4. DaprÆô¶¯ºó / After Dapr starts
+    4. Daprå¯åŠ¨å / After Dapr starts
         ``` C#
-        // ½« WaitDaprHostedService Ìí¼Óµ½ IServiceCollection ÖĞ£¬²¢½«ÆäÅäÖÃÎªÍĞ¹Ü·şÎñÔËĞĞ¡£ / Add WaitDaprHostedService to the IServiceCollection and configure it to run as a hosted service.
-        // ¿ÉÒÔÍ¨¹ı configureOptions ²ÎÊı×Ô¶¨Òå WaitDaprHostedService µÄÑ¡Ïî¡£ / You can customize the options of WaitDaprHostedService through the configureOptions parameter.
-        // ¿ÉÒÔÍ¨¹ı otherCode ²ÎÊıÔÚ Dapr ·şÎñ×¼±¸¾ÍĞ÷ºóÖ´ĞĞÆäËû²Ù×÷¡£ / The otherCode parameter can be used to perform other operations after the Dapr service is ready.
+        // å°† WaitDaprHostedService æ·»åŠ åˆ° IServiceCollection ä¸­ï¼Œå¹¶å°†å…¶é…ç½®ä¸ºæ‰˜ç®¡æœåŠ¡è¿è¡Œã€‚ / Add WaitDaprHostedService to the IServiceCollection and configure it to run as a hosted service.
+        // å¯ä»¥é€šè¿‡ configureOptions å‚æ•°è‡ªå®šä¹‰ WaitDaprHostedService çš„é€‰é¡¹ã€‚ / You can customize the options of WaitDaprHostedService through the configureOptions parameter.
+        // å¯ä»¥é€šè¿‡ otherCode å‚æ•°åœ¨ Dapr æœåŠ¡å‡†å¤‡å°±ç»ªåæ‰§è¡Œå…¶ä»–æ“ä½œã€‚ / The otherCode parameter can be used to perform other operations after the Dapr service is ready.
         public static IServiceCollection AddWaitDaprHostedService(this IServiceCollection services, Action<WaitDaprHostedOptions>? configureOptions = null, Action<IServiceProvider, CancellationToken>? otherCode = null)
         ```
