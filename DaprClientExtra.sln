@@ -5,10 +5,11 @@ VisualStudioVersion = 17.11.34909.67
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprClientExtra", "DaprClientExtra\DaprClientExtra.csproj", "{CD1C29E2-D63F-4145-9459-31266CD0A4DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaprClientExtraTests", "DaprClientExtraTests\DaprClientExtraTests.csproj", "{26D06FD6-818B-4D10-B040-E6521D8D67E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprClientExtraTests", "DaprClientExtraTests\DaprClientExtraTests.csproj", "{26D06FD6-818B-4D10-B040-E6521D8D67E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{8572044E-613A-4A86-81E0-76308F9850B6}"
 	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
