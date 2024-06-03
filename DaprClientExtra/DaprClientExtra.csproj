@@ -4,15 +4,22 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>1.0.8.1011</AssemblyVersion>
-    <FileVersion>1.0.8.1011</FileVersion>
+    <AssemblyVersion>1.0.11.0652</AssemblyVersion>
+    <FileVersion>1.0.11.0652</FileVersion>
     <Version>$(AssemblyVersion)</Version>
     <PackageOutputPath>C:\Users\huang\source\repos\MyNugetPackages</PackageOutputPath>
     <Authors>huangzhilue</Authors>
     <Title>$(AssemblyName)</Title>
     <PackageTags>Dapr</PackageTags>
-    <Description>！注意！不建议在生产环境使用该包！
-自行编写的用来扩充DaprClient方法、Man.Dapr.Sidekick方法的类库。</Description>
+    <Description>针对Dapr SDK for .NET和Dapr Sidekick for .NET的简单扩展
+Simple extension for Dapr SDK for .NET and Dapr Sidekick for .NET
+
+注意！不建议在生产环境中使用
+Warning! It is not recommended to use it in a production environment
+	</Description>
+    <PackageProjectUrl>https://github.com/HuangZhilue/DaprClientExtra</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -26,6 +33,13 @@
     <IsTrimmable>False</IsTrimmable>
     <IsAotCompatible>False</IsAotCompatible>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapr.Client" Version="1.13.1" />

@@ -3,7 +3,8 @@
 > [!WARNING]  
 > 不建议在生产环境中使用 <br/> It is not recommended to use it in a production environment
 
-个人使用的针对[Dapr SDK for .NET](https://github.com/dapr/dotnet-sdk)和[Dapr Sidekick for .NET](https://github.com/man-group/dapr-sidekick-dotnet)的简单扩展
+针对[Dapr SDK for .NET](https://github.com/dapr/dotnet-sdk)和[Dapr Sidekick for .NET](https://github.com/man-group/dapr-sidekick-dotnet)的简单扩展
+<br/>Simple extension for [Dapr SDK for .NET](https://github.com/dapr/dotnet-sdk) and [Dapr Sidekick for .NET](https://github.com/man-group/dapr-sidekick-dotnet)
 
 ## 使用示例 / Examples
 
