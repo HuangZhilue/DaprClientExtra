@@ -76,7 +76,7 @@
         > <br/> For the list data storage situation, you can use the relevant tools to view it, such as redis, you can use the rdm tool to view it
         ``` C#
         // 保存列表数据 / Save list data
-        public static async Task SaveStateListByKeyAsync<T>(this DaprClient daprClient, string statename, string key,  List<T> list, string keyField)
+        public static async Task SaveStateListByKeyAsync<T>(this DaprClient daprClient, string statename, string key,  List<T> list, string keyField, int expiryInSeconds = -1)
             
         // 获取通过 SaveStateListByKeyAsync 方法保存的列表数据 / Get the list data that was saved by SaveStateListByKeyAsync
         public static async Task<List<T>> GetStateListByKeyAsync<T>(this DaprClient daprClient,  string statename, string key)
