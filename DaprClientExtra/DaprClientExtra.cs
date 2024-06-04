@@ -74,7 +74,8 @@ public static class DaprClientExtra
         string statename,
         string key,
         List<T> list,
-        string keyField
+        string keyField,
+        int expiryInSeconds = -1
     )
         where T : class
     {
@@ -111,7 +112,11 @@ public static class DaprClientExtra
                 new StateTransactionRequest(
                     $"{key}_{keyString}",
                     Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(data)),
-                    StateOperationType.Upsert
+                    StateOperationType.Upsert,
+                    metadata: new Dictionary<string, string>()
+                    {
+                        { "ttlInSeconds", expiryInSeconds.ToString() }
+                    }
                 )
             );
         }

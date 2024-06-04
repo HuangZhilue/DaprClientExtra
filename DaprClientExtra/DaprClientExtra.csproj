@@ -4,8 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>1.0.14.0723</AssemblyVersion>
-    <FileVersion>1.0.14.0723</FileVersion>
+    <AssemblyVersion>1.0.16.0836</AssemblyVersion>
+    <FileVersion>1.0.16.0836</FileVersion>
     <Version>$(AssemblyVersion)-alpha</Version>
     <PackageOutputPath>C:\Users\huang\source\repos\MyNugetPackages</PackageOutputPath>
     <Authors>huangzhilue</Authors>
@@ -21,6 +21,7 @@ Warning! It is not recommended to use it in a production environment
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReleaseNotes>SaveStateListByKeyAsync方法增加过期时间参数</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
